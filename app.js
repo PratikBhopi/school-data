@@ -7,8 +7,9 @@ app.use(cors())
 app.use(express.json())
 
 app.use("/school",schoolRouter)
-app.post('/',async (req,res)=>{
-    res.send('sd');
+app.get('/',async (req,res)=>{
+    const [rows]=await db.query('SELECT * FROM schools')
+    res.send('all schools: ',rows);
 })
 
 module.exports = app;
