@@ -8,7 +8,6 @@ const pool = mysql.createPool({
     database: process.env.MYSQL_DBNAME,
     waitForConnections: true,
     connectionLimit: 10,
-    port: 3306,
     ssl:{ca: Buffer.from(process.env.DB_SSL_CERT_BASE64, "base64").toString()}
 });
 
