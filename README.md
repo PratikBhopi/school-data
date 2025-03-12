@@ -4,7 +4,7 @@
 
 ### 1. Get Schools Data
 
-**Endpoint:** `/list-schools`
+**Endpoint:** `/listSchools`
 
 **Method:** `GET`
 
@@ -16,7 +16,7 @@
 
 **Sample URL:**
 ```
-/list-schools?latitude=12.9716&longitude=77.5946
+/listSchools?latitude=12.9716&longitude=77.5946
 ```
 
 **Response:**
@@ -53,7 +53,7 @@
 
 ### 2. Add School Data
 
-**Endpoint:** `/add-school`
+**Endpoint:** `/addSchool`
 
 **Method:** `POST`
 
