@@ -31,8 +31,8 @@ exports.addSchoolData=async(req,res)=>{
     const newName=String(name).toLocaleLowerCase(),newAddress=String(address).toLowerCase();
     try{
         const [existing] = await pool.execute(
-            `SELECT 1 FROM schools WHERE name = ? AND address= ? LIMIT 1`, 
-            [newName,newAddress]
+            `SELECT 1 FROM schools WHERE name = ? AND latitude=? AND longitude=? LIMIT 1`, 
+            [newName,latitude,longitude]
         );
 
         if (existing.length > 0) {
