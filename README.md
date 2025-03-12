@@ -31,7 +31,7 @@
         "address": "School Address",
         "latitude": "School Latitude",
         "longitude": "School Longitude",
-        "distance": "Distance from provided location"
+        "distance": "Distance (km) from provided location"
       },
       ...
     ]
@@ -43,11 +43,11 @@
     "error": "Latitude and Longitude are required"
   }
   ```
-- `404 Not Found`: 
+- `500 Internal Server Error`: 
   ```json
   {
     "success": false,
-    "error": "Error message"
+    "message": "Internal Server Error"
   }
   ```
 
@@ -65,8 +65,18 @@
 - `latitude` (required): The latitude of the school.
 - `longitude` (required): The longitude of the school.
 
+**Example Request Body:**
+```json
+{
+  "name": "Example School",
+  "address": "123 Example Street",
+  "latitude": 12.9716,
+  "longitude": 77.5946
+}
+```
+
 **Response:**
-- `200 OK`: 
+- `201 Created`: 
   ```json
   {
     "success": true,
@@ -87,10 +97,11 @@
     "message": "School already exists!"
   }
   ```
-- `404 Not Found`: 
+- `500 Internal Server Error`: 
   ```json
   {
-    "error": "Error message"
+    "success": false,
+    "message": "Internal Server Error"
   }
   ```
 
